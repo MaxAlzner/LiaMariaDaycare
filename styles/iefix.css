@@ -1,0 +1,30 @@
+#navigation ul li a, #navigation ul li a:hover, .section
+{
+}
+#navigation ul li a
+{
+	font-size:12pt;
+	height:20px;
+	padding:13px 0;
+	background:url(../images/background/verticalGradient.png) repeat-x top left;
+	background-color:#FF0000;
+}
+#navigation ul li a:hover
+{
+	background:url(../images/background/verticalGradientHover.png) repeat-x top left;
+}
+.section
+{
+	background:url(../images/background/horizontalGradient.png) repeat-y top left;
+}
+/*#title
+{
+	background:url(../images/background/titleFix.png) no-repeat top center;
+	height:126px;
+	padding:0;
+	margin:0;
+}*/
+#title h1
+{
+	display:none;
+}
