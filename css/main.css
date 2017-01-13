@@ -2,7 +2,9 @@ body
 {
     background: url(../img/background.jpg) top center;
 }
+.page-header > *
 {
+    color: white !important;
 }
 
 ul li
