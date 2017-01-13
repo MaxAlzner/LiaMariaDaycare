@@ -351,7 +351,7 @@ in a safe home environment. Call 309.517.3277" />
 		<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
 		<script type="text/javascript">
 			$(document).ready(function () {
-				$('gallery-item > a').click(function (e) {
+				$('.gallery-item > a').click(function (e) {
 					e.preventDefault();
 					$('#photo-carousel').carousel(parseInt(this.dataset.index, 10) || 0);
 					$('html, body').animate({ scrollTop: $('#photo-carousel').offset().top });
