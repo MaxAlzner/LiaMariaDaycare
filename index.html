@@ -21,46 +21,10 @@ in a safe home environment. Call 309.517.3277" />
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/main.css" />
 
 	<style type="text/css">
-		ul li
-		{
-			background:url(img/daisy_icon.png) no-repeat;
-			list-style:none;
-			padding:0.2em 0;
-			padding-left:32px;
-		}
-		.carousel-inner > .item > img
-		{
-			margin-left: auto;
-			margin-right: auto;
-		}
-		.gallery
-		{
-			text-align: center;
-			line-height: 0;
-			font-size: 0;
-			padding: 0;
-			margin: 0;
-		}
-		.gallery > .gallery-item
-		{
-			list-style: none;
-			background: none;
-			padding: 0;
-			margin-left: 10px;
-			margin-right: 10px;
-			margin-bottom: 10px;
-			display: inline-block;
-			vertical-align: top;	
-		}
-		.divider
-		{
-			width:800px;
-			height:25px;
-			margin:1em auto;
-			background:url(../img/daisy_icon.png) center left;
-		}
 	</style>
 </head>
 <body>
@@ -238,7 +202,7 @@ in a safe home environment. Call 309.517.3277" />
 						<fieldset>
 							<legend>Indoor Play Area</legend>
 							<ul class="gallery">
-								<li class="gallery-item"><a href="img/indoor_play_area/01.jpg" target="_blank" data-index="0"><img src="img/indoor_play_area/01t.jpg" alt="" /></a></li>
+								<li class="gallery-item active"><a href="img/indoor_play_area/01.jpg" target="_blank" data-index="0"><img src="img/indoor_play_area/01t.jpg" alt="" /></a></li>
 								<li class="gallery-item"><a href="img/indoor_play_area/02.jpg" target="_blank" data-index="1"><img src="img/indoor_play_area/02t.jpg" alt="" /></a></li>
 								<li class="gallery-item"><a href="img/indoor_play_area/03.jpg" target="_blank" data-index="2"><img src="img/indoor_play_area/03t.jpg" alt="" /></a></li>
 								<li class="gallery-item"><a href="img/indoor_play_area/04.jpg" target="_blank" data-index="3"><img src="img/indoor_play_area/04t.jpg" alt="" /></a></li>
@@ -387,11 +351,15 @@ in a safe home environment. Call 309.517.3277" />
 		<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
 		<script type="text/javascript">
 			$(document).ready(function () {
-				$('.gallery > .gallery-item > a').click(function (e) {
+				$('gallery-item > a').click(function (e) {
 					e.preventDefault();
 					$('#photo-carousel').carousel(parseInt(this.dataset.index, 10) || 0);
 					$('html, body').animate({ scrollTop: $('#photo-carousel').offset().top });
 					return false;
+				});
+				$('#photo-carousel').on('slid.bs.carousel', function (e) {
+					$('.gallery-item.active').removeClass('active');
+					$('.gallery-item:has(a[data-index=' + $(this).find('.item').index(e.relatedTarget) + '])').addClass('active');
 				});
 				$('a[href="#content"], a[href="#contact"], a[href="#photos"], a[href="#aboutus"]').click(function (e) {
 					e.preventDefault();
