@@ -1,8 +1,10 @@
 body
 {
     background: url(../img/background.jpg) top center;
-    color: #FFF;
 }
+{
+}
+
 ul li
 {
     background: url(../img/daisy_icon.png) no-repeat;
