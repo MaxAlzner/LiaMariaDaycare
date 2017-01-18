@@ -3,6 +3,7 @@ body
     background-color: black;
     background: url(../img/background.jpg) top center;
 }
+
 .page-header > *
 {
     color: white !important;
@@ -10,6 +11,10 @@ body
 #footer a
 {
     color: white !important;
+}
+#footer a:hover
+{
+    color: black !important;
 }
 
 ul li
